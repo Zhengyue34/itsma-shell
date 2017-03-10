@@ -11,11 +11,15 @@ shell脚本让安装和某些检查变得快捷，也是了解Linux的一种很�
 ## 检查状态类    
 #### 1.chkPVlog.sh
 * [chkPVlog](https://github.com/Zhengyue34/itsma-shell/blob/master/%E6%A3%80%E6%9F%A5%E7%8A%B6%E6%80%81/chkPVlog.sh)
-#### 2.chksmsuite.sh    
+
+#### 2.chksmsuite.sh        
 * [chksmsuite](https://github.com/Zhengyue34/itsma-shell/blob/master/%E6%A3%80%E6%9F%A5%E7%8A%B6%E6%80%81/chksmsuite.sh)
-#### 3.deleteOldAndCreateNewNamespace.sh 
+
+#### 3.deleteOldAndCreateNewNamespace.sh     
 * [Namespace](https://github.com/Zhengyue34/itsma-shell/blob/master/%E6%A3%80%E6%9F%A5%E7%8A%B6%E6%80%81/deleteOldAndCreateNewNamespace.sh)
-#### 4.Liveness_Readiness.sh
+
+#### 4.Liveness_Readiness.sh    
 * [Liveness&&Readiness](https://github.com/Zhengyue34/itsma-shell/blob/master/%E6%A3%80%E6%9F%A5%E7%8A%B6%E6%80%81/Liveness_Readiness.sh)
-#### 5.OS_check.sh
+
+#### 5.OS_check.sh    
 * [OS_check](https://github.com/Zhengyue34/itsma-shell/blob/master/%E6%A3%80%E6%9F%A5%E7%8A%B6%E6%80%81/OS_check.sh)
