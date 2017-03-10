@@ -15,7 +15,7 @@ echo "Delete namespace $1..."
 kubectl delete namespace $1
 
 echo "Stop suite config..."
-kubectl delete -f /var/vols/itom/core/suite-install/itsma/suite_config.yaml
+kubectl delete -f ....../suite_config.yaml
 
 echo "Check status of pods in namespace $1..."
 exitCode=0
@@ -36,14 +36,14 @@ echo "Delete pv $1pv"
 kubectl delete pv $1pv
 kubectl delete pv $1-smarta-pv
 
-echo "Remove /var/vols/itom/itsma/itsma-$1"
-rm -rf /var/vols/itom/itsma/itsma-$1
+echo "Remove ....../itsma-$1"
+rm -rf ....../itsma-$1
 
-echo "Create /var/vols/itom/itsma/itsma-$2"
-mkdir /var/vols/itom/itsma/itsma-$2
+echo "Create ....../itsma-$2"
+mkdir ....../itsma-$2
 
-echo "Change owner of /var/vols/itom/itsma/itsma-$2"
-chown -R itsma:itsma /var/vols/itom/itsma/itsma-$2
+echo "Change owner of ....../itsma-$2"
+chown -R itsma:itsma ....../itsma-$2
 
 echo "Modify /etc/exports"
 sed -i "s#itsma-$1#itsma-$2#" /etc/exports
