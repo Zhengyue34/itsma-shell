@@ -1,3 +1,6 @@
+# 学习计划
+* [计划表](https://github.com/Zhengyue34/itsma-shell/wiki/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92)
+
 # itsma-shell
 # 一些自己写的小脚本用于安装以及状态检查 
 
