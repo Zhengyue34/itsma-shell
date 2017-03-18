@@ -9,9 +9,10 @@ shell脚本让安装和某些检查变得快捷，也是了解Linux的一种很�
 ## 脚本分类
 ## 安装类
 #### 1.maven
-* [install_mvn](https://github.com/Zhengyue34/itsma-shell/blob/master/%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/mvn_install.sh)    
+* [install_mvn](https://github.com/Zhengyue34/itsma-shell/blob/master/%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/mvn_install.sh)     
+#### 2.配置安装nginx    
 
-## 检查状态类    
+## 检查状态类    
 #### 1.chkPVlog.sh
 * [chkPVlog](https://github.com/Zhengyue34/itsma-shell/blob/master/%E6%A3%80%E6%9F%A5%E7%8A%B6%E6%80%81/chkPVlog.sh)
 
