@@ -37,7 +37,7 @@ useradd -r -g 108 -u 108 nginx
 #过程中可能还会缺失一些库，都可以用yum安装
 make && make install
 
-3.为nginx提供SysV init脚本（启动nginx）
+3.为nginx提供SysV init脚本（添加Nginx为系统服务，实现service nginx start）
 vi /etc/init.d/nginx
 #!/bin/sh
 #
@@ -150,3 +150,12 @@ case "$1" in
 esac
 
 chmod +x /etc/init.d/nginx
+
+4.添加至服务管理列表，并让其开机自动启动
+chkconfig --add nginx
+chkconfig nginx --list
+nginx              0:off    1:off    2:off    3:off    4:off    5:off    6:off
+service nginx start
+#至此web服务启动，查看一下端口
+netstat -ntlp | grep :80
+#在web输入localhost的IP即可访问nginx.
