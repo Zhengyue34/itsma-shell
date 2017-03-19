@@ -11,7 +11,7 @@ shell脚本让安装和某些检查变得快捷，也是了解Linux的一种很�
 #### 1.maven
 * [install_mvn](https://github.com/Zhengyue34/itsma-shell/blob/master/%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/mvn_install.sh)     
 #### 2.配置安装nginx       
-* [Ngimx安装](https://github.com/Zhengyue34/itsma-shell/blob/master/%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/nginx_install%E6%AD%A5%E9%AA%A4)   
+* [Ngimx安装](https://github.com/Zhengyue34/itsma-shell/blob/master/%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/nginx_install%E6%AD%A5%E9%AA%A4)   * [Nginx优化配置](https://github.com/Zhengyue34/itsma-shell/wiki/Nginx%E7%9A%84%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE)    
 ## 检查状态类    
 #### 1.chkPVlog.sh
 * [chkPVlog](https://github.com/Zhengyue34/itsma-shell/blob/master/%E6%A3%80%E6%9F%A5%E7%8A%B6%E6%80%81/chkPVlog.sh)
