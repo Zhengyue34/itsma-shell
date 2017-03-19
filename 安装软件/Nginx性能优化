@@ -5,4 +5,21 @@ httpd{http相关配置}
 server{虚拟主机}
 location{URI访问属性}
 location{proxy_pass http://176.10.12.1}
-优化基础配置：
+
+#优化基础配置：
+##1.高层的配置
+user www-data;       #user应该按默认设置，我们不会更改这些内容；我们可以在编译安装时就自己添加用户。
+pid /var/run/nginx.pid;  #pid也安装默认设置
+worker_processes 8;   #定义了nginx对外提供web服务时的worker进程数，最优值取决于许多因素，包括（但不限于）CPU核的数量、存储数据的硬盘数量及负载模式。不能确定的时候，将其设置为可用的CPU内核数；
+worker_cpu_affinity 00000001 00000010 00000100 00001000 00010000 00100000 01000000 10000000;   #为每个进程分配cpu，上例中将8 个进程分配到8 个cpu，当然可以写多个，或者将一
+个进程分配到多个cpu
+worker_rlimit_nofile 100000;  #worker进程的最大打开文件数限制。如果没设置的话，这个值为操作系统的限制。设置后你的操作系统和Nginx可以处理比“ulimit -a”更多的文件，所以把这个值设高，这样nginx就不会有“too many open files”问题了
+/*
+ulimit 在资源的合理限制和分配（开启文件描述符的数量，分配堆栈的大小，CPU 时间，虚拟内存大小）起作用，是一种简单并且有效的实现资源限制的方式
+*/
+##2. Event模块
+events { 
+worker_connections 2048;  #单个进程允许的最多连接数，所以理论上，一个nginx server的最大连接数=worker_processes*worker_connections
+multi_accept on; 
+use epoll; 
+} 
