@@ -1,0 +1,8 @@
+修改的唯一文件是/etc/nginx/nginx.conf,它主要包括这几个模块：
+main work_proess等
+events{事件驱动相关}
+httpd{http相关配置}
+server{虚拟主机}
+location{URI访问属性}
+location{proxy_pass http://176.10.12.1}
+优化基础配置：
