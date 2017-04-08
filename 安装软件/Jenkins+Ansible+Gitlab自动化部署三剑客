@@ -1,4 +1,4 @@
-1.安装ansible：
+###1.安装ansible：
 在此目录下可以查看yum的repository：
 /etc/yum.repos.d/epel.repo
 原来的yum源已经做了改变，把7.2.11全部换成7：
@@ -33,9 +33,34 @@ enabled=1
 首先安装ansible的repo：  http://www.tecmint.com/how-to-enable-epel-repository-for-rhel-centos-6-5/
 设置代理:   export http_proxy=http://web-proxy.rose.hpecorp.net:8080/
 get rpm:   wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm
-安装repo：  export http_proxy=http://web-proxy.rose.hpecorp.net:8080/
+安装repo：  rpm -ivh epel-release-7-9.noarch.rpm
 验证epel的repo已经安装好：  yum repolist
 安装ansible：  yum --enablerepo=epel install ansible
           或者 yum install -y ansible
 查看ansible安装成功：  ansible --version
           
+###2.安装Jenkins（可直接用rpm包，也可以用yum源）
+安装jenkins 需要首先配置 jdk
+/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.65-3.b17.el7.x86_64/jre/bin
+
+用yum源安装， http://pkg.jenkins-ci.org/redhat/
+首先设置proxy： export https_proxy=https://web-proxy.rose.hpecorp.net:8080/（因为这两个底下的repo用的都是https）
+配置yum 源  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+导入公钥    sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+安装        yum install jenkins -y
+查看安装后生成的文件    /usr/lib/jenkins/jenkins.war
+
+进入jenkins的系统配置文件并修改相关端口号：jenkins的默认JENKINS_PORT是8080，JENKINS_AJP_PORT默认端口是8009，这同tomcat的默认端口冲突。我这更改为8088和8089
+vim /etc/sysconfig/jenkins
+JENKINS_PORT
+JENKINS_AJP_PORT
+检查jenkins是否配置jdk，在candidates后面加上自己的jdk路径
+vim /etc/rc.d/init.d/jenkins
+/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.65-3.b17.el7.x86_64/jre/bin
+
+配置完成后：
+#systemctl daemon-reload
+#systemctl enable jenkins
+#systemctl start jenkins
+
+启动成功后，就可以访问了，访问地址如下：hostIP:8088
