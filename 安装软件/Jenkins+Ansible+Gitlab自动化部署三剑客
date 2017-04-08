@@ -43,7 +43,7 @@ get rpm:   wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9
 安装jenkins 需要首先配置 jdk
 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.65-3.b17.el7.x86_64/jre/bin
 
-用yum源安装， http://pkg.jenkins-ci.org/redhat/
+用yum源安装  http://pkg.jenkins-ci.org/redhat/
 首先设置proxy： export https_proxy=https://web-proxy.rose.hpecorp.net:8080/（因为这两个底下的repo用的都是https）
 配置yum 源  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
 导入公钥    sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
